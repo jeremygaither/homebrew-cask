@@ -1,6 +1,6 @@
 cask "zoomus" do
-  version "5.4.58740.1105"
-  sha256 "db45d830f07e83d8800e5f8a97a752f1348e7b7f362f45ee19e07769293e6828"
+  version "5.4.58887.1115"
+  sha256 "fd23e9a0a64549b0b74ff05045e0aadfea96fba1e3ccf4fc5c85098bfb51bd29"
 
   # d11yldzmag5yn.cloudfront.net/ was verified as official when first introduced to the cask
   url "https://d11yldzmag5yn.cloudfront.net/prod/#{version}/Zoom.pkg"
@@ -9,7 +9,6 @@ cask "zoomus" do
   desc "Video communication and virtual meeting platform"
   homepage "https://www.zoom.us/"
 
-  auto_updates true
   conflicts_with cask: "zoom-for-it-admins"
 
   pkg "Zoom.pkg"

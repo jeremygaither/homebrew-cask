@@ -1,10 +1,11 @@
 cask "xctu" do
-  version "40003027_AA"
-  sha256 "9d5edbf6470367716780a310d265e1610cc0f2f40f394a14a10ad36f7dd6d821"
+  version "40003027_AB"
+  sha256 "d0b1af42d5f8a61d29a433f07065da0d39312e388ef117ef7c46ace763576d64"
 
   url "https://ftp1.digi.com/support/utilities/#{version}.zip"
   appcast "https://www.digi.com/support/includes/utilities.aspx?pid=3352"
   name "XCTU"
+  desc "Configuration Platform for XBee/RF Solutions"
   homepage "https://www.digi.com/products/embedded-systems/digi-xbee-tools/xctu"
 
   installer script: {

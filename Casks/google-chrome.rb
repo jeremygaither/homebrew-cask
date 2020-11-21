@@ -1,11 +1,11 @@
 cask "google-chrome" do
-  version "86.0.4240.198"
-  sha256 "d9a29439644b81e97104baa9046b60b99cba4ef40e740c9a7ea7cd3a2116514a"
+  version "87.0.4280.67"
+  sha256 "d768f823e56b0dde4e68fd785db0c535ceb9fb1b4d5a5e9bf673e5b4a59e8ea4"
 
   url "https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg"
   appcast "https://omahaproxy.appspot.com/history?os=mac;channel=stable"
   name "Google Chrome"
-  desc "Cross-platform web browser"
+  desc "Web browser"
   homepage "https://www.google.com/chrome/"
 
   auto_updates true
@@ -13,12 +13,7 @@ cask "google-chrome" do
 
   app "Google Chrome.app"
 
-  uninstall launchctl: [
-    "com.google.keystone.agent",
-    "com.google.keystone.daemon",
-  ]
-
-  zap trash: [
+  zap trash:     [
     "/Library/Caches/com.google.SoftwareUpdate.*",
     "/Library/Google/Google Chrome Brand.plist",
     "/Library/Google/GoogleSoftwareUpdate",
@@ -41,10 +36,14 @@ cask "google-chrome" do
     "~/Library/Saved Application State/com.google.Chrome.savedState",
     "~/Library/WebKit/com.google.Chrome",
   ],
-      rmdir: [
+      rmdir:     [
         "/Library/Google",
         "~/Library/Application Support/Google",
         "~/Library/Caches/Google",
         "~/Library/Google",
+      ],
+      launchctl: [
+        "com.google.keystone.agent",
+        "com.google.keystone.daemon",
       ]
 end

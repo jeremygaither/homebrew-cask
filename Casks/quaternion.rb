@@ -1,6 +1,6 @@
 cask "quaternion" do
-  version "0.0.9.5-beta2"
-  sha256 "e01540c36559f445075c4f870205fb938362260282bcdc4e06a729dab7601f9e"
+  version "0.0.9.4"
+  sha256 "e33ecf94cbafedd3f665db8ff52764ee403af3acb45aff676788ec96225e8d03"
 
   url "https://github.com/quotient-im/Quaternion/releases/download/#{version}/quaternion-#{version}.dmg"
   appcast "https://github.com/quotient-im/Quaternion/releases.atom"
