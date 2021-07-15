@@ -1,19 +1,25 @@
 cask "arq" do
-  version "7.2.3"
-  sha256 "acd2d6d621c9bbc2f064ecde8a8833a5d781e5a5701a2dcde5b6bf04c1fb47b1"
+  version "7.6"
+  sha256 "e1e332ec84568b1735b18d2e3f5b77fa001323e87945f1c05b44282c450707c6"
 
   url "https://www.arqbackup.com/download/arqbackup/Arq#{version}.pkg"
-  appcast "https://www.arqbackup.com/download/arqbackup/arq#{version.major}_release_notes.html"
   name "Arq"
   desc "Multi-cloud backup application"
   homepage "https://www.arqbackup.com/"
 
+  livecheck do
+    url "https://www.arqbackup.com/download/arqbackup/arq#{version.major}_release_notes.html"
+    regex(/Version\s*(\d+(?:\.\d+)+)/i)
+  end
+
   auto_updates true
+  depends_on macos: ">= :yosemite"
 
   pkg "Arq#{version}.pkg"
 
   uninstall pkgutil:   "com.haystacksoftware.Arq",
             quit:      "com.haystacksoftware.Arq",
+            delete:    "/Applications/Arq.app",
             launchctl: [
               "com.haystacksoftware.ArqMonitor",
               "com.haystacksoftware.arqagent",

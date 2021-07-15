@@ -1,9 +1,18 @@
 cask "nota" do
-  version "0.24.1"
-  sha256 "4485f37ba36eebbedd200c0b396747829047e16f9e2bdd9d869c140f41c1ea6a"
+  version "0.30.0"
 
-  url "https://github.com/notaapp/releases/releases/download/#{version}/Nota-#{version}-mac.zip",
-      verified: "github.com/notaapp/releases/"
+  if Hardware::CPU.intel?
+    sha256 "c4cf8b5ca66999dd7226d0e854ced7f7318415df3a7dfdee689d7e250f682a4e"
+
+    url "https://github.com/notaapp/releases/releases/download/#{version}/Nota-#{version}-mac.zip",
+        verified: "github.com/notaapp/releases/"
+  else
+    sha256 "3f54464561409899eb1945e7a741f59b0b6dd175c43fb74b19877e8d90574a43"
+
+    url "https://github.com/notaapp/releases/releases/download/#{version}/Nota-#{version}-arm64-mac.zip",
+        verified: "github.com/notaapp/releases/"
+  end
+
   name "Nota"
   desc "Markdown files editor"
   homepage "https://nota.md/"

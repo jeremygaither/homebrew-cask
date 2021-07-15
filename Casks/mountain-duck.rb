@@ -1,6 +1,6 @@
 cask "mountain-duck" do
-  version "4.5.0,17823"
-  sha256 "29fe46af0ed010b083d0d63a4ee2dbf72ac66247d1832dfa4131fad5e6e46470"
+  version "4.6.2,18221"
+  sha256 "01f47701216b7165efa15993348d78b0fcdf65a7588978c594c4f3741d7e022d"
 
   url "https://dist.mountainduck.io/Mountain%20Duck-#{version.before_comma}.#{version.after_comma}.zip"
   name "Mountain Duck"
@@ -13,11 +13,13 @@ cask "mountain-duck" do
   end
 
   auto_updates true
+  depends_on macos: ">= :sierra"
 
   app "Mountain Duck.app"
 
   zap trash: [
     "~/Library/Application Scripts/io.mountainduck.findersync",
+    "~/Library/Caches/io.mountainduck",
     "~/Library/Containers/io.mountainduck.findersync",
     "~/Library/Group Containers/G69SCX94XU.duck",
     "~/Library/Preferences/io.mountainduck.plist",

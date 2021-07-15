@@ -1,15 +1,20 @@
 cask "coscreen" do
-  version "1.6.113-beta"
-  sha256 "b2cb464e8943beee12feb0df2aa013e2e1e76c21e8c57944299f42862ef66eb0"
+  version "2.3.19"
+  sha256 "1d6d3ecfa419ebe97adcc6a79a12c1eca031e2faf2c2d82f90743b8fdb77fba5"
 
-  url "https://update.coscreen.org/CoScreen-#{version}.dmg",
+  url "https://update.coscreen.org/CoScreen-#{version}-beta.dmg",
       verified: "https://update.coscreen.org/"
-  appcast "https://update.coscreen.org/beta-mac.yml"
   name "CoScreen"
   desc "Collaboration tool with multi-user screen sharing"
   homepage "https://coscreen.co/"
 
+  livecheck do
+    url "https://update.coscreen.org/beta-mac.yml"
+    strategy :electron_builder
+  end
+
   auto_updates true
+  depends_on macos: ">= :mojave"
 
   app "CoScreen.app"
 
